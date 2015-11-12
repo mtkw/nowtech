@@ -1,10 +1,10 @@
-package zadanie2;
+package zadanie2_Problem6_Labirynt;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import zadanie2.DrawSquareToConsole;;
+import zadanie2_Problem6_Labirynt.DrawSquareToConsole;;
 
 
 public class SquareMaze {

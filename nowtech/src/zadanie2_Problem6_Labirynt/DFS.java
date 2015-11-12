@@ -1,4 +1,4 @@
-package zadanie2;
+package zadanie2_Problem6_Labirynt;
 
 import java.util.LinkedList;
 
