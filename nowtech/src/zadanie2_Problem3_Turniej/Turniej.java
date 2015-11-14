@@ -63,6 +63,7 @@ public class Turniej {
 							opponent.getPotentialOpponents().remove(qurentPlayer);
 
 							opponent.setCanFight(false);
+							break;
 						}
 					}
 					//
