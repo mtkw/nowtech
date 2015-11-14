@@ -28,22 +28,52 @@ public class Turniej {
 
 		return listOfPlayers;
 	}
-	
-	public void playerAndOpponents(LinkedList<Player> players){
-		for(int i = 0; i < players.size(); i++){
+
+	public void playerAndOpponents(LinkedList<Player> players) {
+		for (int i = 0; i < players.size(); i++) {
 			String dsc = players.get(i).getDescription();
 			LinkedList<Player> opponents = players.get(i).getPotentialOpponents();
-			
-			for(int j = 0; j < opponents.size(); j++){
+
+			for (int j = 0; j < opponents.size(); j++) {
 				System.out.print(opponents.get(j).getDescription() + ", ");
 			}
 			System.out.println();
 		}
 	}
 
-	public void sheduling(int numberOfDays, LinkedList<String> listOfPlayers) {
+	public void sheduling(int numberOfDays, LinkedList<Player> listOfPlayers) {
 		for (int i = 1; i <= numberOfDays; i++) {
-			int day = i;
+			System.out.println("Dzieñ " + i);
+			String duel = "";
+			for (int p = 0; p < listOfPlayers.size() - 1; p++) {
+				Player qurentPlayer = listOfPlayers.get(p);
+				if (qurentPlayer.isCanFight()) {
+					// System.out.println(qurentPlayer.getDescription());
+
+					for (Player o : listOfPlayers.get(p).getPotentialOpponents()) {
+						if (o.isCanFight()) {
+							Player opponent = o;
+							// System.out.println("Przeciwnik -" +
+							// opponent.getDescription());
+							duel = qurentPlayer.getDescription() + " vs " + opponent.getDescription();
+
+							// usuniêcie z listy przeciwników przeciwnika z
+							// którym jest zaplanowany pojedynek
+							qurentPlayer.getPotentialOpponents().remove(opponent);
+							opponent.getPotentialOpponents().remove(qurentPlayer);
+
+							opponent.setCanFight(false);
+						}
+					}
+					//
+					// //zablokowanie mo¿liwoœci kolejnych pojednyków danego
+					// dnia
+					qurentPlayer.setCanFight(false);
+
+				}
+
+				System.out.println(duel);
+			}
 		}
 	}
 

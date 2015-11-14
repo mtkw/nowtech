@@ -9,10 +9,11 @@ public class test {
 		
 //		System.out.println(t.createListOfPlayers(4));
 //		System.out.println(t.listOfPlayers.get(1).getDescription());
-		t.createListOfPlayers(16);
+		t.createListOfPlayers(4);
 		t.createListOfOpponents(t.listOfPlayers);
 //		System.out.println(t.listOfPlayers.get(2).getPotentialOpponents().get(2).getDescription());
-		t.playerAndOpponents(t.listOfPlayers);
+		//t.playerAndOpponents(t.listOfPlayers);
+		t.sheduling(3, t.listOfPlayers);
 		
 
 	}
