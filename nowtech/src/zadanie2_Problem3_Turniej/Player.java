@@ -1,20 +1,29 @@
 package zadanie2_Problem3_Turniej;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * klasa zawodnika w turnieju
+ * 
+ * @author 
+ *
+ */
 public class Player {
 
 	private int playerNumber;
-	private boolean canFight = true;
+	private boolean canFightToday = true;
+	private ArrayList<Integer> alreadyFightedList = new ArrayList<>(); //np: currentPlayer{1, 1, 0, 1} // 0=nie walczy³, 1=walczy³
 	private LinkedList<Player> potentialOpponents = new LinkedList<>();
 	private String description;
 
 	public Player(int playerNumber, boolean canFight, LinkedList<Player> potentialOpponents, String description) {
 		super();
 		this.playerNumber = playerNumber;
-		this.canFight = canFight;
+		this.canFightToday = canFight;
 		this.potentialOpponents = potentialOpponents;
 		this.description = description;
+
 	}
 
 	public int getPlayerNumber() {
@@ -23,14 +32,6 @@ public class Player {
 
 	public void setPlayerNumber(int playerNumber) {
 		this.playerNumber = playerNumber;
-	}
-
-	public boolean isCanFight() {
-		return canFight;
-	}
-
-	public void setCanFight(boolean canFight) {
-		this.canFight = canFight;
 	}
 
 	public LinkedList<Player> getPotentialOpponents() {
@@ -47,6 +48,22 @@ public class Player {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean isCanFightToday() {
+		return canFightToday;
+	}
+
+	public void setCanFightToday(boolean canFightToday) {
+		this.canFightToday = canFightToday;
+	}
+
+	public ArrayList<Integer> getAlreadyFightedList() {
+		return alreadyFightedList;
+	}
+
+	public void setAlreadyFightedList(ArrayList<Integer> alreadyFightedList) {
+		this.alreadyFightedList = alreadyFightedList;
 	}
 
 }
