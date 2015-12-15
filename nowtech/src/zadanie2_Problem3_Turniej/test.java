@@ -6,7 +6,7 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		int numberOfPlayers = 8;
+		int numberOfPlayers = 4096;
 		
 		Turniej turniej = new Turniej();
 		turniej.createListOfPlayers(numberOfPlayers);
